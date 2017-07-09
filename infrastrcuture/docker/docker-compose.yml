@@ -1,0 +1,24 @@
+version: '2'
+services:
+
+  viscat_phpcli:
+    image: viscat/demo-phpcli
+    environment:
+      REDIS_HOST: "viscat_redis"
+    depends_on:
+      - viscat_redis
+    volumes:
+      - ../../application:/var/www/app
+      - ~/.ssh:/root/.ssh
+      - /etc/ssl:/etc/ssl
+      - ~/.aws:/root/.aws
+    tty: true
+    working_dir: /var/www/app
+    ports:
+      - 8000:8000
+      - 80:80
+
+
+  viscat_redis:
+    image: redis
+
