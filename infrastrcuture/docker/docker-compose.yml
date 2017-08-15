@@ -17,6 +17,10 @@ services:
     ports:
       - 8000:8000
       - 80:80
+    entrypoint:
+      - apachectl
+      - -D
+      - FOREGROUND
 
 
   viscat_redis:
