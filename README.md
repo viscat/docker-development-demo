@@ -21,6 +21,12 @@ $ packer build infrastrcuture/packer/demo_phpcli_dev.json
 $ docker-compose -f infrastrcuture/docker/docker-compose.yml up -d
 ```
 
+## Install dependencies
+
+```bash
+$ docker exec -it docker_viscat_phpcli_1 composer install
+```
+
 ## Visit web app
 
 Edit your `/etc/hosts` and add:
