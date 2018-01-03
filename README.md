@@ -33,7 +33,7 @@ $ ./develop exec viscat_phpcli composer install
 
 Edit your `/etc/hosts` and add:
 ```
-0.0.0.0 demo.viscat.local
+0.0.0.0:8080 demo.viscat.local
 ```
 
 Open your browser at: http://demo.viscat.local and should see "Hi!"
@@ -45,9 +45,9 @@ This container comes with configurated XDebug, but may need some tweeks and conf
 
 ### Check remote ip address
 
-Open `develop` file and check `XDEBUG_HOST` variable setting. This envvar should contain the ip address of your host. The
-command to get it works for my laptop, but I'm not sure it work on every linux. There is also a OSX variant. Depending on 
-how your computer is connected to the network (Ethernet or WiFi) it could differ.
+If you are using Docker for Mac, it should be all ok, but if you use Linux or Windows, open `develop` file and 
+check `XDEBUG_HOST` variable setting. This environment variable should contain the ip address of your host. There's a
+command to get it automatically for Linux that works for my laptop.
 
 
 ### Configure it with PHPStorm
