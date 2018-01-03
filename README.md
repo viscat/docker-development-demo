@@ -1,4 +1,4 @@
-Docker demo app
+Docker Symfony 3.4 Demo App
 ===
 
 # Set up
