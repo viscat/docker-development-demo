@@ -50,9 +50,9 @@ command to get it works for my laptop, but I'm not sure it work on every linux. 
 how your computer is connected to the network (Ethernet or WiFi) it could differ.
 
 
-### Configure PHPStorm
+### Configure it with PHPStorm
 
-
+https://drive.google.com/file/d/16Gc5jR3vA9UJKnUnC5MGf_4dWCJRol2O/view?usp=sharing
 
 ## Other stuff
 
