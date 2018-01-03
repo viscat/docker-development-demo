@@ -2,9 +2,12 @@ version: '2'
 services:
 
   viscat_phpcli:
-    image: viscat/demo-phpcli
+    build:
+      context: .
+    image: viscat/demo-phpcli-xdebug
     environment:
       REDIS_HOST: "viscat_redis"
+      XDEBUG_HOST: ${XDEBUG_HOST}
     depends_on:
       - viscat_redis
     volumes:
@@ -15,13 +18,7 @@ services:
     tty: true
     working_dir: /var/www/app
     ports:
-      - 8000:8000
       - 80:80
-    entrypoint:
-      - apachectl
-      - -D
-      - FOREGROUND
-
 
   viscat_redis:
     image: redis

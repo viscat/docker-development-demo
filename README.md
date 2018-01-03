@@ -18,20 +18,46 @@ $ packer build infrastrcuture/packer/demo_phpcli_dev.json
 ## Spin up containers
 
 ```bash
-$ docker-compose -f infrastrcuture/docker/docker-compose.yml up -d
+$ ./develop up -d
 ```
+
+This is a shorthand for `docker-compose -f infrastrcuture/docker/docker-compose.yml up -d`
 
 ## Install dependencies
 
 ```bash
-$ docker exec -it docker_viscat_phpcli_1 composer install
+$ ./develop exec viscat_phpcli composer install
 ```
 
 ## Visit web app
 
 Edit your `/etc/hosts` and add:
 ```
-0.0.0.0 demo.viscat.app
+0.0.0.0 demo.viscat.local
 ```
 
-Open your browser at: http://demo.viscat.app
+Open your browser at: http://demo.viscat.local and should see "Hi!"
+
+
+## Configure XDebug
+
+This container comes with configurated XDebug, but may need some tweeks and config before use it:
+
+### Check remote ip address
+
+Open `develop` file and check `XDEBUG_HOST` variable setting. This envvar should contain the ip address of your host. The
+command to get it works for my laptop, but I'm not sure it work on every linux. There is also a OSX variant. Depending on 
+how your computer is connected to the network (Ethernet or WiFi) it could differ.
+
+
+### Configure PHPStorm
+
+
+
+## Other stuff
+
+You can also enter in a bash console typing:
+```bash
+docker ./develop exec viscat_phpcli bash
+```
+

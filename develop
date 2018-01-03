@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# Set environment variables for dev
+#export XDEBUG_HOST=$(ipconfig getifaddr en1) # Specific to OSX
+export XDEBUG_HOST=$(/sbin/ip route|awk '/kernel.*metric/ { print $9 }') # Specific to OSX
+
+if [ $# -gt 0 ]; then
+    docker-compose -f infrastrcuture/docker/docker-compose.yml "$@"
+    if [[ "$@" == *"up"* ]]; then
+        echo ""
+        echo "Add this to your '/etc/hosts': '0.0.0.0 demo.viscat.local'"
+        echo "Then you can visit: 'http://demo.viscat.local'"
+        echo ""
+    fi
+else
+docker-compose -f infrastrcuture/docker/docker-compose.yml ps
+fi

@@ -36,6 +36,14 @@
     - role: geerlingguy.php
       php_version: 7.1
 
+    - role: geerlingguy.php-xdebug
+      php_xdebug_remote_enable: "true"
+      php_xdebug_remote_connect_back: "false"
+      php_xdebug_remote_host: localhost
+      php_xdebug_remote_port: "9000"
+      php_xdebug_remote_autostart: "true"
+      php_xdebug_idekey: docker
+
     - role: geerlingguy.composer
 
     - role: geerlingguy.apache
@@ -44,7 +52,7 @@
       apache_vhosts_filename: "vhosts.conf"
       apache_state: restarted
       apache_vhosts:
-        - servername: "demo.viscat.app"
+        - servername: "demo.viscat.local"
           extra_parameters: |
             DocumentRoot /var/www/app/public
             <Directory "/var/www/app/public">

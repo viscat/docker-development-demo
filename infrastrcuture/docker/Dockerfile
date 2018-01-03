@@ -1,0 +1,10 @@
+FROM viscat/demo-phpcli:latest
+
+COPY debug /usr/local/bin/debug
+RUN chmod +x usr/local/bin/debug
+
+COPY start-container /usr/local/bin/start-container
+RUN chmod +x usr/local/bin/start-container
+
+EXPOSE 80
+CMD ["start-container"]

@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+env PHP_IDE_CONFIG="serverName=docker-demo" XDEBUG_CONFIG="idekey=docker" SYMFONY_DEBUG="1" $@
