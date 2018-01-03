@@ -1,3 +1,3 @@
 .idea
-infrastrcuture/ansible/galaxy
-infrastrcuture/ansible/*.retry
+infrastructure/ansible/galaxy
+infrastructure/ansible/*.retry

@@ -5,7 +5,7 @@
 export XDEBUG_HOST=$(/sbin/ip route|awk '/kernel.*metric/ { print $9 }') # Specific to OSX
 
 if [ $# -gt 0 ]; then
-    docker-compose -f infrastrcuture/docker/docker-compose.yml "$@"
+    docker-compose -f infrastructure/docker/docker-compose.yml "$@"
     if [[ "$@" == *"up"* ]]; then
         echo ""
         echo "Add this to your '/etc/hosts': '0.0.0.0 demo.viscat.local'"
@@ -13,5 +13,5 @@ if [ $# -gt 0 ]; then
         echo ""
     fi
 else
-docker-compose -f infrastrcuture/docker/docker-compose.yml ps
+docker-compose -f infrastructure/docker/docker-compose.yml ps
 fi

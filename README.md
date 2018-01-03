@@ -6,13 +6,13 @@ Docker Symfony 4 Demo App
 ## Import ansible requirements
 
 ```bash
-$ ansible-galaxy install -p infrastrcuture/ansible/galaxy -r infrastrcuture/ansible/requirements.yml
+$ ansible-galaxy install -p infrastructure/ansible/galaxy -r infrastructure/ansible/requirements.yml
 ```
 
 ## Build docker image
 
 ```bash
-$ packer build infrastrcuture/packer/demo_phpcli_dev.json
+$ packer build infrastructure/packer/demo_phpcli_dev.json
 ```
 
 ## Spin up containers
@@ -21,7 +21,7 @@ $ packer build infrastrcuture/packer/demo_phpcli_dev.json
 $ ./develop up -d
 ```
 
-This is a shorthand for `docker-compose -f infrastrcuture/docker/docker-compose.yml up -d`
+This is a shorthand for `docker-compose -f infrastructure/docker/docker-compose.yml up -d`
 
 ## Install dependencies
 
