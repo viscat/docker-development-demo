@@ -1,0 +1,5 @@
+{
+    "symfony/class-loader": {
+        "version": "v3.4.2"
+    }
+}

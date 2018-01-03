@@ -5,10 +5,10 @@
   "description": "Demo project",
   "require": {
     "php": "^7.1.3",
-    "symfony/console": "^3.3",
+    "symfony/console": "^3.4",
     "symfony/flex": "^1.0",
-    "symfony/framework-bundle": "^3.3",
-    "symfony/yaml": "^3.3"
+    "symfony/framework-bundle": "^3.4",
+    "symfony/yaml": "^3.4"
   },
   "require-dev": {
     "symfony/dotenv": "^3.3"
