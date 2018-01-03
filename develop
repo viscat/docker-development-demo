@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-# Set environment variables for dev
-#export XDEBUG_HOST=$(ipconfig getifaddr en1) # Specific to OSX
-export XDEBUG_HOST=$(/sbin/ip route|awk '/kernel.*metric/ { print $9 }') # Specific to OSX
+# Change it depending on your OS
+export XDEBUG_HOST='docker.for.mac.localhost' # Specific to OSX
+#export XDEBUG_HOST=$(/sbin/ip route|awk '/kernel.*metric/ { print $9 }') # Specific to Linux
 
 if [ $# -gt 0 ]; then
     docker-compose -f infrastructure/docker/docker-compose.yml "$@"

@@ -19,7 +19,7 @@ services:
     tty: true
     working_dir: /var/www/app
     ports:
-      - 80:80
+      - 8080:80
 
   viscat_redis:
     image: redis
