@@ -15,6 +15,7 @@ services:
       - ~/.ssh:/root/.ssh
       - /etc/ssl:/etc/ssl
       - ~/.aws:/root/.aws
+      - .bash_history:/root/.bash_history
     tty: true
     working_dir: /var/www/app
     ports:
